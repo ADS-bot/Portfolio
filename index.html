@@ -13,6 +13,11 @@
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="assets/css/styles.css">
 
+      <!--=============== DOWNLOAD ===============-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.15/dist/sweetalert2.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.15/dist/sweetalert2.all.min.js"></script>
+
+
       <title>PortFolio</title>
    </head>
    <body>
@@ -120,7 +125,7 @@
                         </pattern>
                   
                         <!-- Insert your profile (recommended size: 640 x 940) -->
-                        <image class="home__img" id="imageBlob" width="640" height="925" href=""/>
+                        <image class="home__img" id="imageBlob" width="640" height="925" href="assets/img/gpp1.png"/>
                      </defs>
                   </svg>
                </div>
@@ -143,7 +148,31 @@ UI / UX user interface, I have years of<br>
 experience and many clients are happy<br> with the 
 projects carried out.
                   </p>
-                  <a href="#contact" class="button">Contact Me</a>
+                  <style>
+                     .button-spacing {
+                         margin-right: 20px; /* Adjust the value as per your preference */
+                     }
+                 </style>
+                  <a href="#contact" class="button button-spacing">Contact Me</a>
+                  <button class="button button-spacing" onclick="showResumePopup()">Resume</button>
+                    <script>
+                     function showResumePopup() {
+                       Swal.fire({
+                         title: 'Resume Options',
+                         html: '<p>Choose an option to view or download the resume:</p>',
+                         showCancelButton: true,
+                         confirmButtonText: 'Download',
+                         showCloseButton: true,
+                         allowOutsideClick: false,
+                       }).then((result) => {
+                         if (result.isConfirmed) {
+                           // Download option selected
+                           window.location.href = 'assets/digi2.pdf';
+                         } 
+                       });
+                     }
+                   </script>
+                   
                </div>
                <div class="about__image">
                   <svg class="about__blob" viewBox="0 0 550 592" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -176,7 +205,7 @@ projects carried out.
                         </pattern>
                   
                         <!-- Insert your profile (recommended size: 640 x 940) -->
-                        <image class="about__img" id="imageBorder" width="640" height="940" href=""/>
+                        <image class="about__img" id="imageBorder" width="640" height="940" href="assets/img/gpp1.png"/>
                      </defs>
                   </svg>
                </div>
@@ -196,20 +225,23 @@ projects carried out.
                   <p class="skills__description">See fully what skills I have and perform, <br>
                   to develop the projects for you.</p>
                   <div style="text-align: center;">
-                     <a href="#projects" class="button">See Projects</a>
+                    <a href="#projects" class="button">See Projects</a>
                    </div>
                </div>
                <div class="skills__content">
                   <ol class="skills__group">
                      <li class="skills__item">HTML & CSS</li>
                      <li class="skills__item">JavaScript</li>
-                     <li class="skills__item">BootStrap</li>
+                     <li class="skills__item">Angular</li>
                      <li class="skills__item">React</li>
+                     <li class="skills__item">React Native</li>
                   </ol>
-                  <ol class="skills__group" start="5">
+                  <ol class="skills__group" start="6">
                      <li class="skills__item">Git & GitHub</li>
                      <li class="skills__item">Figma</li>
-                     <li class="skills__item">Sketch</li>
+                     <li class="skills__item">Node js</li>
+                     <li class="skills__item">Python</li>
+                     <li class="skills__item">Mongo DB</li>
                   </ol>
                </div>
             </div>
@@ -270,7 +302,7 @@ projects carried out.
                   <div class="projects__model">
                      <span class="projects__subtitle">Web</span>
                      <h2 class="projects__title">Modern Website</h2>
-                     <a href="https://cropio.me/" class="projects__button">
+                     <a href="#" class="projects__button">
                         View Demo <i class="ri-external-link-line"></i>
                      </a>
                   </div>
